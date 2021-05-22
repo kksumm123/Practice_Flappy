@@ -8,6 +8,6 @@ public class ScrollX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime, 0, 0);
+        transform.Translate(speed * Time.deltaTime * GameManager.instance.ScrollSpeedMult, 0, 0);
     }
 }

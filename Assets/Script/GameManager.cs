@@ -7,10 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     static public GameManager instance;
+
     public GameObject gameOverUI;
     public TextMeshProUGUI ScoureUI;
     bool isGameOver = false;
     public int score = 0;
+
+    float scrollSpeedMult = 1;
+    public float ScrollSpeedMult
+    {
+        get { return scrollSpeedMult; }
+        set { scrollSpeedMult = value; }
+    }
+
     void Awake()
     {
         instance = this;

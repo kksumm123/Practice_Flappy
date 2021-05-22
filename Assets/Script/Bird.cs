@@ -39,6 +39,7 @@ public class Bird : MonoBehaviour
     {
         animator.Play("Die");
         GameManager.instance.SetGamveOver(true);
+        GameManager.instance.ScrollSpeedMult = 0;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

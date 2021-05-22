@@ -11,7 +11,6 @@ public class Relocation : MonoBehaviour
     {
         var spriterenderer = GetComponentInChildren<SpriteRenderer>();
         width = spriterenderer.sprite.bounds.size.x * transform.lossyScale.x;
-        Debug.Log($" width = {spriterenderer.sprite.bounds.size.x} * {transform.lossyScale.x}");
         minX = -width;
     }
 
