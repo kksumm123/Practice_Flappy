@@ -31,4 +31,8 @@ public class Bird : MonoBehaviour
         animator.Play("Die");
         GameManager.instance.SetGamveOver(true);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameManager.instance.AddScore(100);
+    }
 }
