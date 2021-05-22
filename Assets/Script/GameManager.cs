@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     static public GameManager instance;
     public GameObject gameOverUI;
-    public TextMeshPro ScoureUI;
+    public TextMeshProUGUI ScoureUI;
     bool isGameOver = false;
     public int score = 0;
     void Awake()
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     }
     public void AddScore(int value)
     {
+        score += value;
         ScoureUI.text = "Score : " + score;
     }
 }
