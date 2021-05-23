@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     static public GameManager instance;
 
-    public GameObject gameOverUI;
-    public TextMeshProUGUI ScoureUI;
+    public GameObject gameOverGO;
+    public TextMeshProUGUI scoureUI;
     bool isGameOver = false;
     public int score = 0;
 
@@ -22,10 +22,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        gameOverGO = GameObject.Find("GameOver");
+        scoureUI = GameObject.Find("ScoreUI").GetComponent<TextMeshProUGUI>();
+    }
+    private void Start()
+    {
         instance = this;
         SetGamveOver(false);
     }
-
     void Update()
     {
         if (isGameOver)
@@ -37,11 +41,11 @@ public class GameManager : MonoBehaviour
     public void SetGamveOver(bool value)
     {
         isGameOver = value;
-        gameOverUI.SetActive(value);
+        gameOverGO.SetActive(value);
     }
     public void AddScore(int value)
     {
         score += value;
-        ScoureUI.text = "Score : " + score;
+        scoureUI.text = "Score : " + score;
     }
 }
